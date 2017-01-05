@@ -1,0 +1,9 @@
+# Build
+markdown: kramdown
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
+# Site
+collections:
+  - competencies
