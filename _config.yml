@@ -3,6 +3,9 @@ markdown: kramdown
 exclude:
   - Gemfile
   - Gemfile.lock
+  - .bundle/
+  - vendor/
+repository: Ibcos/competency-library.git
 
 # Site
 collections:
