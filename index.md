@@ -58,7 +58,7 @@ layout: default
             {% for definition in competency.definitions %}
             <tr>
               <td id="{{ competency.title | downcase | append: forloop.index }}">
-                <button id="{{ competency.title | downcase | append: forloop.index | append: 'pop' }}" type="button" class="btn btn-success" data-container="body" data-toggle="popover" data-trigger="focus" data-timeout="2500" data-placement="bottom" title="{{ competency.title }}" data-content="{{ forloop.index | append: '. ' | append: definition.title }}">{{ forloop.index }}</button>
+                <button id="{{ competency.title | downcase | append: forloop.index | append: 'pop' }}" type="button" class="btn btn-success" data-container="body" data-toggle="popover" data-timeout="3000" data-placement="bottom" title="{{ competency.title }}" data-content="{{ forloop.index | append: '. ' | append: definition.title }}">{{ forloop.index }}</button>
               </td>
               <td>
                 <ul>
