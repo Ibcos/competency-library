@@ -39,7 +39,7 @@ layout: default
               <h6 class="card-title">{{ competency.tagline }}</h6>
               <ol class="card-text">
               {% for definition in competency.definitions %}
-                <li><a href="#{{ competency.title | downcase }}{{ forloop.index }}">{{ definition.title }}</a></li>
+                <li><a href="#{{ competency.title | downcase | append: forloop.index }}" onclick="$('#{{ competency.title | downcase | append: forloop.index | append: 'pop' }}').popover('toggle');">{{ definition.title }}</a></li>
               {% endfor %}
               </ol>
             </div>
@@ -57,8 +57,8 @@ layout: default
             </thead>
             {% for definition in competency.definitions %}
             <tr>
-              <td id="{{ competency.title | downcase }}{{ forloop.index }}">
-                <button type="button" class="btn btn-success" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" title="{{ competency.title }}" data-content="{{ forloop.index }}. {{ definition.title }}">{{ forloop.index }}</button>
+              <td id="{{ competency.title | downcase | append: forloop.index }}">
+                <button id="{{ competency.title | downcase | append: forloop.index | append: 'pop' }}" type="button" class="btn btn-success" data-container="body" data-toggle="popover" data-trigger="focus" data-timeout="2500" data-placement="bottom" title="{{ competency.title }}" data-content="{{ forloop.index | append: '. ' | append: definition.title }}">{{ forloop.index }}</button>
               </td>
               <td>
                 <ul>
