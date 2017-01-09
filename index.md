@@ -13,7 +13,7 @@ layout: default
         </li>
       </ul>
     </nav>
-    <h3 class="text-muted"><img src="/images/ibcos.png" width="45" height="45" class="d-inline-block align-middle" alt=""> Competency Library</h3>
+    <h3 class="text-muted"><img src="images/ibcos.png" width="45" height="45" class="d-inline-block align-middle" alt=""> Competency Library</h3>
   </div>
 
   <div class="row">
