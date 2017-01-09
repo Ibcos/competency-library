@@ -33,27 +33,31 @@ layout: default
       {% for competency in site.competencies %}
       {% if competency.type == 'core' %}
         <div class="tab-pane fade{% if forloop.index == 1 %} show active{% endif %}" id="{{ competency.title | downcase }}" role="tabpanel">
-          <h4>{{ competency.title }}</h4>
-          <h5><span class="badge badge-default">{{ competency.tagline }}</span></h5>
-          <ol>
-          {% for definition in competency.definitions %}
-            <li>{{ definition.title }}</li>
-          {% endfor %}
-          </ol>
+          <div class="card">
+            <h4 class="card-header">{{ competency.title }}</h4>
+            <div class="card-block">
+              <h6 class="card-title">{{ competency.tagline }}</h6>
+              <ol class="card-text">
+              {% for definition in competency.definitions %}
+                <li><a href="#{{ competency.title | downcase }}{{ forloop.index }}">{{ definition.title }}</a></li>
+              {% endfor %}
+              </ol>
+            </div>
+          </div>
           <table class="table table-hover">
-            <thead class="thead-default">
-              <tr>
+            <thead class="thead-default ">
+              <tr class="">
                 <th>&nbsp;</th>
-                <th>Unsatisfactory</th>
-                <th>Needs Improvement</th>
-                <th>Meets Expectations</th>
-                <th>Exceeds Expectations</th>
-                <th>Exceptional</th>
+                <th class="text-center">Unsatisfactory</th>
+                <th class="text-center">Needs Improvement</th>
+                <th class="text-center">Meets Expectations</th>
+                <th class="text-center">Exceeds Expectations</th>
+                <th class="text-center">Exceptional</th>
               </tr>
             </thead>
             {% for definition in competency.definitions %}
             <tr>
-              <td>
+              <td id="{{ competency.title | downcase }}{{ forloop.index }}">
                 <button type="button" class="btn btn-success" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" title="{{ competency.title }}" data-content="{{ forloop.index }}. {{ definition.title }}">{{ forloop.index }}</button>
               </td>
               <td>
