@@ -1,5 +1,6 @@
 ---
 title: "Respectful"
+tagline: "I treat colleagues and customers with deference and respect."
 type: "core"
 definitions:
     - title: ""

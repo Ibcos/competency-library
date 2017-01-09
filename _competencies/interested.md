@@ -1,5 +1,6 @@
 ---
 title: "Interested"
+tagline: "I want to learn more about what I and the company does."
 type: "core"
 definitions:
     - title: ""

@@ -1,5 +1,6 @@
 ---
 title: "Innovative"
+tagline: "I devise new methods and ideas to deliver greater value."
 type: "core"
 definitions:
     - title: "Identifies a range of new ideas designed to improve performance."

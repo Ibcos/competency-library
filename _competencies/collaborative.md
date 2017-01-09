@@ -1,5 +1,6 @@
 ---
 title: "Collaborative"
+tagline: "I work well with others to get the desired outcome."
 type: "core"
 definitions:
     - title: ""

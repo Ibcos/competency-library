@@ -1,5 +1,6 @@
 ---
 title: "Positive"
+tagline: "I convey an optimistic and confident approach to situations."
 type: "core"
 definitions:
     - title: ""

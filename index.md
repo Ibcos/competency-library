@@ -34,6 +34,7 @@ layout: default
   <div class="row">
     <div class="col-lg">
       <h4>{{ competency.title }}</h4>
+      <h5><span class="badge badge-default">{{ competency.tagline }}</span></h5>
       <ol>
       {% for definition in competency.definitions %}
         <li>{{ definition.title }}</li>
