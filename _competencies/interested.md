@@ -6,7 +6,6 @@ definitions:
     - title: "Constructive engagement with colleagues across the whole business."
       unsatisfactories:
           - example: "Keeps themselves to themselves, no active engagement with others."
-          - example: ""
       needs:
           - example: "Engages with others from time to time but with limited inter departmental co-operation."
       meets:
