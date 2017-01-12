@@ -21,18 +21,21 @@ layout: default
       <h2>Core Competencies</h2>
       <p></p>
       <ul class="nav nav-tabs" role="tablist">
+      {% assign coreCompetencyTabIndex = 0 %}
       {% for competency in site.competencies %}
       {% if competency.type == 'core' %}
         <li class="nav-item">
-          <a class="nav-link{% if forloop.index == 1 %} active{% endif %}" data-toggle="tab" href="#{{ competency.title | downcase | replace: ' ', '-' }}" role="tab">{{ competency.title }}</a>
+          <a class="nav-link{% if coreCompetencyTabIndex == 0 %} active{% endif %}" data-toggle="tab" href="#{{ competency.title | downcase | replace: ' ', '-' }}" role="tab">{{ competency.title }}</a>
         </li>
+      {% assign coreCompetencyTabIndex = coreCompetencyTabIndex | plus: 1 %}
       {% endif %}
       {% endfor %}
       </ul>
       <div class="tab-content">
+      {% assign coreCompetencyPaneIndex = 0 %}
       {% for competency in site.competencies %}
       {% if competency.type == 'core' %}
-        <div class="tab-pane fade{% if forloop.index == 1 %} show active{% endif %}" id="{{ competency.title | downcase | replace: ' ', '-' }}" role="tabpanel">
+        <div class="tab-pane fade{% if coreCompetencyPaneIndex == 0 %} show active{% endif %}" id="{{ competency.title | downcase | replace: ' ', '-' }}" role="tabpanel">
           <div class="card">
             <h4 class="card-header">{{ competency.title }}</h4>
             <div class="card-block">
@@ -99,6 +102,7 @@ layout: default
             {% endfor %}
           </table>
         </div>
+      {% assign coreCompetencyPaneIndex = coreCompetencyPaneIndex | plus: 1 %}
       {% endif %}
       {% endfor %}
       </div>
