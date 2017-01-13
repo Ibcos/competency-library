@@ -6,17 +6,17 @@ layout: default
     <nav>
       <ul class="nav nav-pills float-right">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Core <span class="sr-only">(current)</span></a>
+          <a class="nav-link active" href="#core">Core <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Role</a>
+          <a class="nav-link" href="#role">Role</a>
         </li>
       </ul>
     </nav>
     <h3 class="text-muted"><img src="images/ibcos.png" width="45" height="45" class="d-inline-block align-middle" alt=""> Competency Library</h3>
   </div>
 
-  <div class="row">
+  <div id="core" class="row">
     <div class="col-lg">
       <h2>Core Competencies</h2>
       <p></p>
@@ -108,6 +108,72 @@ layout: default
       </div>
     </div>
   </div>
+
+  <div id="role" class="row">
+    <div class="col-lg">
+      <h2>Role Competencies</h2>
+      <p></p>
+      <ul class="nav nav-tabs" role="tablist">
+      {% assign roleCompetencyTabIndex = 0 %}
+      {% for competency in site.competencies %}
+      {% if competency.type == 'role' %}
+        <li class="nav-item">
+          <a class="nav-link{% if roleCompetencyTabIndex == 0 %} active{% endif %}" data-toggle="tab" href="#{{ competency.title | downcase | replace: ' ', '-' }}" role="tab">{{ competency.title }}</a>
+        </li>
+      {% assign roleCompetencyTabIndex = roleCompetencyTabIndex | plus: 1 %}
+      {% endif %}
+      {% endfor %}
+      </ul>
+      <div class="tab-content">
+      {% assign roleCompetencyPaneIndex = 0 %}
+      {% for competency in site.competencies %}
+      {% if competency.type == 'role' %}
+        <div class="tab-pane fade{% if roleCompetencyPaneIndex == 0 %} show active{% endif %}" id="{{ competency.title | downcase | replace: ' ', '-' }}" role="tabpanel">
+          <div class="card">
+            <h4 class="card-header">{{ competency.title }}</h4>
+            <div class="card-block">
+              <ol class="card-text">
+              {% for definition in competency.definitions %}
+                <li><a href="#{{ competency.title | downcase | replace: ' ', '-' | append: '-' | append: forloop.index }}" onclick="$('#{{ competency.title | downcase | replace: ' ', '-' | append: '-' | append: forloop.index | append: 'pop' }}').popover('show');">{{ definition.title }}</a></li>
+              {% endfor %}
+              </ol>
+            </div>
+          </div>
+          <table class="table table-hover">
+            <thead class="thead-default ">
+              <tr class="">
+                <th>&nbsp;</th>
+                <th class="text-center">Positive</th>
+                <th class="text-center">Negative</th>
+              </tr>
+            </thead>
+            {% for definition in competency.definitions %}
+            <tr>
+              <td id="{{ competency.title | downcase | replace: ' ', '-' | append: '-' | append: forloop.index }}">
+                <button id="{{ competency.title | downcase | replace: ' ', '-' | append: '-' | append: forloop.index | append: 'pop' }}" type="button" class="btn btn-success" data-container="body" data-toggle="popover" data-timeout="3000" data-placement="bottom" title="{{ competency.title }}" data-content="{{ forloop.index | append: '. ' | append: definition.title }}">{{ forloop.index }}</button>
+              </td>
+              <td>
+                <ul>
+                  <li>{{ definition.positive }}</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>{{ definition.negative }}</li>
+                </ul>
+              </td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+      {% assign roleCompetencyPaneIndex = roleCompetencyPaneIndex | plus: 1 %}
+      {% endif %}
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+
+
   <footer class="footer">
     <p>Designed with <i class="fa fa-heart" aria-hidden="true"></i> in Poole - &copy; Ibcos 2017</p>
   </footer>
