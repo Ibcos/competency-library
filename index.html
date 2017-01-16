@@ -75,35 +75,35 @@ layout: default
                   <td>
                     <ul>
                     {% for unsatisfactory in definition.unsatisfactories %}
-                      <li>{{ unsatisfactory.example }}</li>
+                      <li>{{ unsatisfactory }}</li>
                     {% endfor %}
                     </ul>
                   </td>
                   <td>
                     <ul>
                     {% for need in definition.needs %}
-                      <li>{{ need.example }}</li>
+                      <li>{{ need }}</li>
                     {% endfor %}
                     </ul>
                   </td>
                   <td>
                     <ul>
                     {% for meet in definition.meets %}
-                      <li>{{ meet.example }}</li>
+                      <li>{{ meet }}</li>
                     {% endfor %}
                     </ul>
                   </td>
                   <td>
                     <ul>
                     {% for exceed in definition.exceeds %}
-                      <li>{{ exceed.example }}</li>
+                      <li>{{ exceed }}</li>
                     {% endfor %}
                     </ul>
                   </td>
                   <td>
                     <ul>
                     {% for exceptional in definition.exceptionals %}
-                      <li>{{ exceptional.example }}</li>
+                      <li>{{ exceptional }}</li>
                     {% endfor %}
                     </ul>
                   </td>
@@ -150,36 +150,35 @@ layout: default
                 <div class="card-block">
                   <ol class="card-text">
                   {% for definition in competency.definitions %}
-                    <li><a href="#{{ competency.title | downcase | replace: ' ', '-' | append: '-' | append: forloop.index }}" onclick="event.preventDefault(); $('#{{ competency.title | downcase | replace: ' ', '-' | append: '-' | append: forloop.index | append: 'pop' }}').popover('show');">{{ definition.title }}</a></li>
+                    <li>{{ definition }}</li>
                   {% endfor %}
                   </ol>
                 </div>
               </div>
-              <table class="table table-hover">
+              <table class="table">
                 <thead class="thead-default ">
-                  <tr class="">
-                    <th>&nbsp;</th>
+                  <tr>
                     <th class="text-center">Positive</th>
                     <th class="text-center">Negative</th>
                   </tr>
                 </thead>
-                {% for definition in competency.definitions %}
                 <tr>
-                  <td id="{{ competency.title | downcase | replace: ' ', '-' | append: '-' | append: forloop.index }}">
-                    <button id="{{ competency.title | downcase | replace: ' ', '-' | append: '-' | append: forloop.index | append: 'pop' }}" type="button" class="btn btn-success" data-container="body" data-toggle="popover" data-timeout="3000" data-placement="bottom" title="{{ competency.title }}" data-content="{{ forloop.index | append: '. ' | append: definition.title }}">{{ forloop.index }}</button>
-                  </td>
                   <td>
                     <ul>
-                      <li>{{ definition.positive }}</li>
+                      {% for positive in competency.positives %}
+                      <li>{{ positive }}</li>
+                      {% endfor %}
                     </ul>
                   </td>
                   <td>
                     <ul>
-                      <li>{{ definition.negative }}</li>
+                      {% for negative in competency.negatives %}
+                      <li>{{ negative }}</li>
+                      {% endfor %}
                     </ul>
                   </td>
                 </tr>
-                {% endfor %}
+                
               </table>
             </div>
           {% assign roleCompetencyPaneIndex = roleCompetencyPaneIndex | plus: 1 %}
