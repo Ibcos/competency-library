@@ -150,7 +150,7 @@ layout: default
                 <div class="card-block">
                   <ol class="card-text">
                   {% for definition in competency.definitions %}
-                    <li><a href="#{{ competency.title | downcase | replace: ' ', '-' | append: '-' | append: forloop.index }}" onclick="$('#{{ competency.title | downcase | replace: ' ', '-' | append: '-' | append: forloop.index | append: 'pop' }}').popover('show');">{{ definition.title }}</a></li>
+                    <li><a href="#{{ competency.title | downcase | replace: ' ', '-' | append: '-' | append: forloop.index }}" onclick="event.preventDefault(); $('#{{ competency.title | downcase | replace: ' ', '-' | append: '-' | append: forloop.index | append: 'pop' }}').popover('show');">{{ definition.title }}</a></li>
                   {% endfor %}
                   </ol>
                 </div>
