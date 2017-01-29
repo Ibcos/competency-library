@@ -206,9 +206,9 @@ layout: default
               {% for role in site.data.roles %}
               {% assign check = forloop.index | modulo:2 %}
               {% if check == 0 %}
-              <col class="bg-faded">
-              {% else %}
               <col>
+              {% else %}
+              <col class="bg-faded">
               {% endif %}
               {% endfor %}
             </colgroup>
@@ -216,7 +216,7 @@ layout: default
               <tr>
                 <th></th>
                 {% for role in site.data.roles %}
-                <th><div class="rotate">{{ role.title }}</div></th>
+                <th class="rotate"><div>{{ role.title }}</div></th>
                 {% endfor %}
               </tr>
             </thead>

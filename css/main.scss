@@ -64,3 +64,13 @@ body {
     margin-bottom: 2rem;
   }
 }
+
+.rotate {
+  height: 220px;
+  white-space: nowrap;
+}
+
+.rotate > div {
+  transform: rotate(-90deg);
+  width: 20px;
+}
