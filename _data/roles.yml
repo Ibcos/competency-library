@@ -1,0 +1,64 @@
+- title: "Support Engineer"
+  competencies:
+  - "Customer Aware"
+  - "Resilient"
+  - "Analytical"
+  - "Good Communicator"
+  - "Organised"
+
+- title: "Consultant"
+  competencies:
+  - "Customer Aware"
+  - "Resilient"
+  - "Analytical"
+  - "Good Communicator"
+  - "Presentation Skills"
+
+- title: "Support Team Lead"
+  competencies:
+  - "Leadership"
+  - "Customer Aware"
+  - "Resilient"
+  - "Emotional Intelligence"
+  - "Decision Making"
+
+- title: "Installation Engineers"
+  competencies:
+  - "Customer Aware"
+  - "Analytical"
+  - "Adaptable"
+  - "Technical"
+  - "Autonomous"
+
+- title: "Sales"
+
+- title: "Admin"
+  competencies:
+  - "Customer Aware"
+  - "Resilient"
+  - "Organised"
+  - "Adaptable"
+  - "Autonomous"
+
+- title: "Developer"
+  competencies:
+  - "Innovative"
+  - "Precise"
+  - "Continuous Improvement"
+  - "Technical"
+
+- title: "Development Team Lead"
+  competencies:
+  - "Leadership"
+  - "Innovative"
+  - "Precise"
+  - "Continuous Improvement"
+  - "Technical"
+
+- title: "Development Coordinator"
+
+- title: "Test Automation Engineer"
+
+- title: "DevOps Engineer"
+
+- title: "Business Analyst"

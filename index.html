@@ -11,6 +11,9 @@ layout: default
         <li class="nav-item">
           <a class="nav-link" data-toggle="pill" href="#role" role="tab">Role</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="#matrix" role="tab">Matrix</a>
+        </li>
       </ul>
     </nav>
     <h3 class="text-muted"><img src="images/ibcos.png" width="45" height="45" class="d-inline-block align-middle" alt=""> Competency Library</h3>
@@ -185,6 +188,75 @@ layout: default
           {% endif %}
           {% endfor %}
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane" id="matrix" role="tabpanel">
+      <div class="row">
+        <div class="col">
+          <h2>Role Matrix</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <table class="table table-sm">
+            <colgroup>
+              <col>
+              {% for role in site.data.roles %}
+              {% assign check = forloop.index | modulo:2 %}
+              {% if check == 0 %}
+              <col class="bg-faded">
+              {% else %}
+              <col>
+              {% endif %}
+              {% endfor %}
+            </colgroup>
+            <thead class="thead-default ">
+              <tr>
+                <th></th>
+                {% for role in site.data.roles %}
+                <th><div class="rotate">{{ role.title }}</div></th>
+                {% endfor %}
+              </tr>
+            </thead>
+            <tr class="table-success">
+              <td colspan="{{ site.data.roles.size | plus: 1 }}">Core</td>
+            </tr>
+            {% for competency in site.competencies %}
+            {% if competency.type == 'core' %}
+            <tr>
+              <td>
+                {{ competency.title }}
+              </td>
+              {% for role in site.data.roles %}
+              <td class="text-center align-middle"><i class="fa fa-check" aria-hidden="true"></i></td>
+              {% endfor %}
+            </tr>
+            {% endif %}
+            {% endfor %}
+            <tr class="table-success">
+              <td colspan="{{ site.data.roles.size | plus: 1 }}">Role</td>
+            </tr>
+            {% for competency in site.competencies %}
+            {% if competency.type == 'role' %}
+            <tr>
+              <td>
+                {{ competency.title }}
+              </td>
+              {% for role in site.data.roles %}
+                <td class="text-center align-middle">
+                  {% for rolecompetency in role.competencies %}
+                  {% if rolecompetency == competency.title %}
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                  {% endif %}
+                  {% endfor %}
+                </td>
+              {% endfor %}
+            </tr>
+            {% endif %}
+            {% endfor %}
+          </table>
         </div>
       </div>
     </div>
