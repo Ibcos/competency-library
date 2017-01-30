@@ -42,6 +42,7 @@
 
 - title: "Developer"
   competencies:
+  - "Analytical"
   - "Innovative"
   - "Precise"
   - "Continuous Improvement"
@@ -56,9 +57,33 @@
   - "Technical"
 
 - title: "Development Coordinator"
+  competencies:
+  - "Organised"
+  - "Autonomous"
+  - "Good Communicator"
+  - "Decision Making"
+  - "Adaptable"
 
 - title: "Test Automation Engineer"
+  competencies:
+  - "Precise"
+  - "Technical"
+  - "Organised"
+  - "Credible"
+  - "Analytical"
 
 - title: "DevOps Engineer"
+  competencies:
+  - "Continuous Improvement"
+  - "Credible"
+  - "Technical"
+  - "Innovative"
+  - "Precise"
 
 - title: "Business Analyst"
+  competencies:
+  - "Autonomous"
+  - "Analytical"
+  - "Organised"
+  - "Credible"
+  - "Precise"
