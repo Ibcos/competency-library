@@ -9,4 +9,11 @@ $(function () {
             this_popover.popover('hide');
         }, $(this).data("timeout"));
     });
-})
+});
+
+$(document).ready(function() {
+    $('#rolematrix').DataTable({
+        "paging": false,
+        "searching": false
+    });
+} );

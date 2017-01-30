@@ -200,7 +200,7 @@ layout: default
       </div>
       <div class="row">
         <div class="col">
-          <table class="table table-sm table-hover">
+          <table id="rolematrix" class="table table-sm table-hover display" cellspacing="0">
             <colgroup>
               <col>
               {% for role in site.data.roles %}
@@ -220,14 +220,12 @@ layout: default
                 {% endfor %}
               </tr>
             </thead>
-            <tr class="table-success">
-              <td colspan="{{ site.data.roles.size | plus: 1 }}">Core</td>
-            </tr>
+
             {% for competency in site.competencies %}
             {% if competency.type == 'core' %}
             <tr>
               <td>
-                {{ competency.title }}
+                {{ competency.title }} <span class="badge badge-pill badge-default">Core</span>
               </td>
               {% for role in site.data.roles %}
               <td class="text-center align-middle"><i class="fa fa-check" aria-hidden="true"></i></td>
@@ -235,9 +233,7 @@ layout: default
             </tr>
             {% endif %}
             {% endfor %}
-            <tr class="table-success">
-              <td colspan="{{ site.data.roles.size | plus: 1 }}">Role</td>
-            </tr>
+
             {% for competency in site.competencies %}
             {% if competency.type == 'role' %}
             <tr>
