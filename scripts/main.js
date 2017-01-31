@@ -14,6 +14,8 @@ $(function () {
 $(document).ready(function() {
     $('#rolematrix').DataTable({
         "paging": false,
-        "searching": false
+        "searching": false,
+        "info": false,
+        "aaSorting": []
     });
-} );
+});
